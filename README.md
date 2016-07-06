@@ -12,9 +12,13 @@ on trouve sur le net des gens qui croient que l'on nous ment sur les décimales 
 
 Installer Perl
 
+Puis
+
+> perl Makefile.PL
+> make
+> make test
+
 ## Utilisation:
 
-Multipliez par 8 la précision que vous voulez. Par exemple si vous voulez 3 chiffres exacts après la virgule vous voulez une précision au millième, donc utilisez 8000. Ensuite:
-
-> ./kalkulu.pl 8000
+Multipliez par 8 la précision que vous voulez. Par exemple si vous voulez 3 chiffres exacts après la virgule vous voulez une précision au millième, donc utilisez 8000. Ensuite, inspirez vous du programme de test t/kalkulu.t
 

@@ -1,5 +1,9 @@
 #!/usr/bin/perl -w
 
+$VERSION = '1.00';
+
+package calculPiFacile;
+
 sub kalkulu {
 	my ($n) = @_;
 	my $kvadrato = $n * $n;
@@ -15,8 +19,4 @@ sub kalkulu {
 	}
 	return 4 * $sumo / $kvadrato;
 }
-
-my $n = shift;
-print STDOUT kalkulu($n) . "\n";
-	
 
