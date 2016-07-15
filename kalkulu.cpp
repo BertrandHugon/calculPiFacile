@@ -6,7 +6,7 @@ unsigned int precizeco (unsigned int n);
 mpq_class kalkulu( unsigned int n);
 
 int main(int argc, char ** argv) {
-	unsigned int n = 8000000;
+	unsigned int n = 800000000;
 	unsigned int prec = precizeco (n);
 	mpf_class r (kalkulu(n), prec * 4);
 	mp_exp_t expo = 0;
@@ -30,8 +30,6 @@ unsigned int precizeco (unsigned int n) {
 mpq_class kalkulu( unsigned int n) {
 	
 	mpz_class big_n (n);
-	mpz_class kvadrato (0);
-	kvadrato = big_n * big_n;
 	mpz_class sumo (0);
 	mpz_class j (1);
 
@@ -39,13 +37,19 @@ mpq_class kalkulu( unsigned int n) {
 
 	mpz_class i (1);
 
+	mpz_class diferenco = 2 - 2 * big_n;
+
 	for (i = 1; cmp(i, big_n) < 0; i ++) {
-		while ( i * i + j * j > kvadrato) {
+		while ( 1 == sgn(diferenco)) {
 			-- j;
+			diferenco -= (2 * j + 1);
 		}
 		sumo += j;
+		diferenco += (2 * i + 1);
 	}
 	sumo *= 4;
+	mpz_class kvadrato (0);
+	kvadrato = big_n * big_n;
 	mpq_class r ( sumo, kvadrato);
 	return r;
 }
