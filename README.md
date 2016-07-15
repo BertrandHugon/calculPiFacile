@@ -24,8 +24,10 @@ Multipliez par 8 la précision que vous voulez. Par exemple si vous voulez 3 chi
 
 ## Implémentation en C++
 
-Utile si vous voulez claculer plus vite. L'implémentaiton utilise la GNU Multi-Precision library (GMP) compilée avec --enable-cpp. Vous devez donc l'installer avant de compiler le programme:
+Utile si vous voulez claculer plus vite. L'implémentaiton utilise la GNU Multi-Precision library (GMP) compilée avec l'option --enable-cpp. Vous devez donc l'installer avant de compiler le programme:
 
 > g++ kalkulu.cpp -lgmpxx -lgmp -o kalkulu
 > ./kalkulu
+
+va vous donner une approximation de 10 x Pi
 
