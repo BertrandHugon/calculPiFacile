@@ -1,12 +1,30 @@
 #include <iostream>
 #include <gmpxx.h>
 
+unsigned int precizeco (unsigned int n);
+
 mpq_class kalkulu( unsigned int n);
 
 int main(int argc, char ** argv) {
-	unsigned int n = 800000;
-	std::cout << kalkulu(n).get_d() << std::endl;
+	unsigned int n = 8000000;
+	unsigned int prec = precizeco (n);
+	mpf_class r (kalkulu(n), prec * 4);
+	mp_exp_t expo = 0;
+	std::cout << r.get_str(expo, 10, prec + 1) << std::endl;
+	if (1 != expo) {
+		std::cout << "erreur" << std::endl;
+		exit(1);
+	}
 	return 0;
+}
+
+unsigned int precizeco (unsigned int n) {
+	unsigned int preciz = 0;
+	n /= 8;
+	while (n/=10) {
+		++ preciz;
+	}
+	return preciz;
 }
 
 mpq_class kalkulu( unsigned int n) {
