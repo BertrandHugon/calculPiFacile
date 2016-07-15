@@ -1,25 +1,34 @@
 #include <iostream>
+#include <gmpxx.h>
 
-double kalkulu( unsigned int n);
+mpq_class kalkulu( unsigned int n);
 
 int main(int argc, char ** argv) {
-	unsigned int n = 4000;
-	std::cout << kalkulu(n) << std::endl;
+	unsigned int n = 800000;
+	std::cout << kalkulu(n).get_d() << std::endl;
 	return 0;
 }
 
-double kalkulu( unsigned int n) {
+mpq_class kalkulu( unsigned int n) {
 	
-	unsigned long int kvadrato = n * n;
-	unsigned long int sumo = 0;
-	unsigned int j = n - 1;
+	mpz_class big_n (n);
+	mpz_class kvadrato (0);
+	kvadrato = big_n * big_n;
+	mpz_class sumo (0);
+	mpz_class j (1);
 
-	for (unsigned int i = 1; i < n; i ++) {
+	j = big_n- 1;
+
+	mpz_class i (1);
+
+	for (i = 1; cmp(i, big_n) < 0; i ++) {
 		while ( i * i + j * j > kvadrato) {
 			-- j;
 		}
 		sumo += j;
 	}
-	return 4 * static_cast<long double>(sumo) / static_cast<long double>(kvadrato);
+	sumo *= 4;
+	mpq_class r ( sumo, kvadrato);
+	return r;
 }
 

@@ -22,3 +22,10 @@ Puis
 
 Multipliez par 8 la précision que vous voulez. Par exemple si vous voulez 3 chiffres exacts après la virgule vous voulez une précision au millième, donc utilisez 8000. Ensuite, inspirez vous du programme de test t/kalkulu.t
 
+## Implémentation en C++
+
+Utile si vous voulez claculer plus vite. L'implémentaiton utilise la GNU Multi-Precision library (GMP) compilée avec --enable-cpp. Vous devez donc l'installer avant de compiler le programme:
+
+> g++ kalkulu.cpp -lgmpxx -lgmp -o kalkulu
+> ./kalkulu
+

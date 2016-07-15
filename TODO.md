@@ -1,7 +1,10 @@
-## Linker le programme c++ avec la GMP (GNU Multi Precision) pour faire des divisions avec des grands nombres.
+## Améliorer le programme en C++
 
-Pour l'instant les commandes suivantes ne marchent que pour n=4000, ce qui ne donne que deux décimales exactes...
+### Prendre en argument la valeur de n
 
-> g++ kalkulu.cpp
-> ./a.out
+> ./kalkulu 800000
+
+### Optimisations dans le calcul
+
+Éviter de faire à chaque fois deux grosses multiplications pour i * i + j * j
 
