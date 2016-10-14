@@ -10,6 +10,5 @@ Faire une belle documentation (par exemple en LateX) qui explique bien la métho
 
 ### Optimisations dans le calcul
 
-* calculer l'aire d'un huitième de disque plutôt qu'un quart
-* utiliser le parallélisme, i.e. demander à différents threads tournant sur des coeurs différents de faire une partie différente de la boucle principale
+Utiliser un algo en O(ln(n)) pour converger plus vite. Pour cela compter non pas par ligne ou colonne mais par carrés dont on diminue de moitié le côté à chaque fois.
 
