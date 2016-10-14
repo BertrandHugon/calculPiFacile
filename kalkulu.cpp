@@ -6,7 +6,7 @@ unsigned int precizeco (unsigned int n);
 mpq_class kalkulu( unsigned int n);
 
 int main(int argc, char ** argv) {
-	unsigned int n = 800000000;
+	unsigned int n = 800000;
 	unsigned int prec = precizeco (n);
 	mpf_class r (kalkulu(n), prec * 4);
 	mp_exp_t expo = 0;
